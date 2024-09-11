@@ -1,0 +1,14 @@
+Level 15 --> 16 : openssl s_client -connect localhost:30001
+netcat usage :
+	nc -l -p <port>  Set up a listener on a port
+	nc <host> <post>
+
+Level 16 --> 17 : openssl s_client -ign_eof -connect localhost:<port using ssl>
+Level 18 --> 19 : ssh -T /bin/bash -p <port> user@host
+Level 20 --> 21 : echo <current pwd> | nc -l <port number>
+		  ./suconnect <port number>
+		  # The trick is to listen on a closed port to allow the binary to connect to that port
+		  # because other open ports don't give the right response 
+		  # P.S : closed port = no service running on said port
+
+	    
